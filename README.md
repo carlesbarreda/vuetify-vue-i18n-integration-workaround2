@@ -8,6 +8,6 @@ The patched version of the vue-i18n adapter is inside src/plugins/locales. It's 
 
 ![Expected string](/vfileinput2.png)
 
-![Expected string](/index_ts.png)
+![index.ts](/index_ts.png)
 
 [Edit on StackBlitz ⚡️](https://stackblitz.com/edit/vuetify-vue-i18n-integration-workaround2)
