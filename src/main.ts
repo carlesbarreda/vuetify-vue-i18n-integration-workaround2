@@ -10,10 +10,11 @@ import { createVuetify } from 'vuetify';
 import * as components from 'vuetify/components';
 import * as directives from 'vuetify/directives';
 
-//import { createVueI18nAdapter } from 'vuetify/locale/adapters/vue-i18n';
-import { createVueI18nAdapter } from '@/plugins/locales/vue-i18n.mjs';
-import { useI18n } from 'vue-i18n';
-import { i18n } from '@/plugins/locales';
+// Translations provided by Vuetify
+//import { ca, es, en } from 'vuetify/locale';
+//import { i18n } from '@/plugins/locales';
+
+import { i18n, useI18n, createVueI18nAdapter } from '@/plugins/locales';
 
 const vuetify = createVuetify({
   components,
@@ -26,6 +27,13 @@ const vuetify = createVuetify({
     },
   },
   locale: {
+    /*
+    locale: import.meta.env.APP_LOCALE ? import.meta.env.APP_LOCALE : 'ca',
+    fallback: import.meta.env.APP_FALLBACK_LOCALE
+      ? import.meta.env.APP_FALLBACK_LOCALE
+      : 'ca',
+    messages: { ca, es, en },
+    */
     adapter: createVueI18nAdapter({ i18n, useI18n }),
   },
 });

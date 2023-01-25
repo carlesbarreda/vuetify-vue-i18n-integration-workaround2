@@ -6,8 +6,8 @@ import SelectLocale from '@/components/SelectLocale.vue';
 import { useI18n } from 'vue-i18n';
 import { useLocale } from 'vuetify';
 
-const { locale, n } = useI18n();
-const { current, t } = useLocale();
+const { locale } = useI18n();
+const { current, t, n } = useLocale();
 
 const files = ref<File[] | undefined>(undefined);
 const size = ref<1000 | 1024>(1024);
@@ -22,7 +22,7 @@ const lang = computed({
 
 const totalFiles = computed((): number => {
   return files.value ? files.value.length : 0;
-}); 
+});
 
 const totalSize = computed((): number => {
   let total = 0;
