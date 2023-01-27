@@ -1,6 +1,7 @@
 import { createI18n } from 'vue-i18n';
 
 import locales from "@intlify/unplugin-vue-i18n/messages";
+//import locales from "@/locales";
 
 // Translations provided by Vuetify
 import { ca, es, en } from 'vuetify/locale';

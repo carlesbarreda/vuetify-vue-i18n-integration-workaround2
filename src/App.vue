@@ -1,13 +1,13 @@
 <script setup lang="ts">
 import { ref, computed } from 'vue';
-import MenuLocale from '@/components/MenuLocale.vue';
-import SelectLocale from '@/components/SelectLocale.vue';
+import MenuLocale from '@/components/MenuLocaleVueI18n.vue';
+import SelectLocale from '@/components/SelectLocaleVueI18n.vue';
 
 import { useI18n } from 'vue-i18n';
 import { useLocale } from 'vuetify';
 
-const { locale } = useI18n();
-const { current, t, n } = useLocale();
+const { locale, n } = useI18n();
+const { current, t } = useLocale();
 
 const files = ref<File[] | undefined>(undefined);
 const size = ref<1000 | 1024>(1024);

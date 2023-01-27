@@ -48,7 +48,6 @@ function createProvideFunction(data) {
       current,
       fallback,
       messages,
-      // @ts-expect-error Type instantiation is excessively deep and possibly infinite
       t: createTranslateFunction(i18n.t),
       n: i18n.n,
       provide: createProvideFunction({
@@ -70,7 +69,6 @@ export function createVueI18nAdapter(_ref) {
     current,
     fallback,
     messages,
-    //t: i18n.global.t,
     t: createTranslateFunction(i18n.global.t),
     n: i18n.global.n,
     provide: createProvideFunction({
