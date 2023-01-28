@@ -1,13 +1,15 @@
 <script setup lang="ts">
 import { ref, computed } from 'vue';
-import MenuLocale from '@/components/MenuLocaleVueI18n.vue';
-import SelectLocale from '@/components/SelectLocaleVueI18n.vue';
+//import MenuLocale from '@/components/vue-i18n/MenuLocale.vue';
+//import SelectLocale from '@/components/vue-i18n/SelectLocale.vue';
+import MenuLocale from '@/components/vuetify/MenuLocale.vue';
+import SelectLocale from '@/components/vuetify/SelectLocale.vue';
 
-import { useI18n } from 'vue-i18n';
+//import { useI18n } from 'vue-i18n';
 import { useLocale } from 'vuetify';
 
-const { locale, n } = useI18n();
-const { current, t } = useLocale();
+//const { locale } = useI18n();
+const { current, t, n } = useLocale();
 
 const files = ref<File[] | undefined>(undefined);
 const size = ref<1000 | 1024>(1024);
@@ -16,8 +18,10 @@ const withSize = ref<boolean>(true);
 const now = computed((): Date => new Date());
 
 const lang = computed({
-  get: () => locale.value,
-  set: (lang) => (locale.value = current.value = lang),
+  //get: () => locale.value,
+  get: () => current.value,
+  //set: (lang) => (locale.value = current.value = lang),
+  set: (lang) => (current.value = current.value = lang),
 });
 
 const totalFiles = computed((): number => {
@@ -32,7 +36,8 @@ const totalSize = computed((): number => {
 });
 
 const totalSizeString = computed((): string => {
-  return `${n(totalSize.value, 'decimal')} B`;
+  //return `${n(totalSize.value, 'decimal')} B`;
+  return `${n(totalSize.value)} B`;
 });
 
 const totalString = computed((): string => {
